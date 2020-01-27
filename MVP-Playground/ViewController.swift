@@ -6,15 +6,24 @@
 //  Copyright © 2020 Bennet. All rights reserved.
 //
 
+import PromiseKit
 import UIKit
 
 class ViewController: UIViewController {
 
+    lazy var externalAPI = ExternalAPI(sessionManager: .marvel)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let params = [String: Any].makeMarvelAuthentication()
+        let request: Promise<MarvelResponse<[Character]>> = externalAPI.request(Route(.get, .characters, with: params))
+        request.map { response in
+            response.results
+        }.done { characters in
+            print(characters)
+        }.catch { error in
+            print(error.localizedDescription)
+        }
     }
-
-
 }
-
