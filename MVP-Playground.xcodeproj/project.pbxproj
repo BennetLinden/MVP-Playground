@@ -16,7 +16,7 @@
 		55336B7C23DF1AD400E75DB1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55336B7B23DF1AD400E75DB1 /* Character.swift */; };
 		55336B7F23DF1B2300E75DB1 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55336B7E23DF1B2300E75DB1 /* MarvelResponse.swift */; };
 		5571E97723DF211500F9732E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97623DF211500F9732E /* String+Extensions.swift */; };
-		5571E97923DF24FF00F9732E /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97823DF24FF00F9732E /* Dictionary+Extensions.swift */; };
+		5571E97B23DF264E00F9732E /* MarvelParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97A23DF264E00F9732E /* MarvelParamsBuilder.swift */; };
 		55A3D6DE23DAFB4000793F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3D6DD23DAFB4000793F90 /* AppDelegate.swift */; };
 		55A3D6E023DAFB4000793F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3D6DF23DAFB4000793F90 /* SceneDelegate.swift */; };
 		55A3D6E723DAFB4300793F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A3D6E623DAFB4300793F90 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		55336B7B23DF1AD400E75DB1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		55336B7E23DF1B2300E75DB1 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
 		5571E97623DF211500F9732E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		5571E97823DF24FF00F9732E /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		5571E97A23DF264E00F9732E /* MarvelParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelParamsBuilder.swift; sourceTree = "<group>"; };
 		55A3D6DA23DAFB4000793F90 /* MVP-Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVP-Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A3D6DD23DAFB4000793F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A3D6DF23DAFB4000793F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +70,7 @@
 				55336B7623DEF72200E75DB1 /* Route.swift */,
 				55336B6823DEDF8800E75DB1 /* RemoteAPI.swift */,
 				55336B7823DEF81400E75DB1 /* ExternalAPI.swift */,
+				5571E97A23DF264E00F9732E /* MarvelParamsBuilder.swift */,
 				55336B7D23DF1B1800E75DB1 /* Response */,
 			);
 			path = Network;
@@ -95,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				5571E97623DF211500F9732E /* String+Extensions.swift */,
-				5571E97823DF24FF00F9732E /* Dictionary+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,13 +212,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				55336B6923DEDF8800E75DB1 /* RemoteAPI.swift in Sources */,
+				5571E97B23DF264E00F9732E /* MarvelParamsBuilder.swift in Sources */,
 				55A3D6F223DAFE9C00793F90 /* ViewController.swift in Sources */,
 				55336B7C23DF1AD400E75DB1 /* Character.swift in Sources */,
 				55A3D6DE23DAFB4000793F90 /* AppDelegate.swift in Sources */,
 				5571E97723DF211500F9732E /* String+Extensions.swift in Sources */,
 				55336B7923DEF81400E75DB1 /* ExternalAPI.swift in Sources */,
 				55336B7F23DF1B2300E75DB1 /* MarvelResponse.swift in Sources */,
-				5571E97923DF24FF00F9732E /* Dictionary+Extensions.swift in Sources */,
 				55336B7723DEF72200E75DB1 /* Route.swift in Sources */,
 				55A3D6E023DAFB4000793F90 /* SceneDelegate.swift in Sources */,
 			);

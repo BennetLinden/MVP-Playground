@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let params = [String: Any].makeMarvelAuthentication()
+        let params: [String: Any] = MarvelParamsBuilder().set(params: ["": ""]).build()
         let request: Promise<MarvelResponse<[Character]>> = externalAPI.request(Route(.get, .characters, with: params))
         request.map { response in
             response.results
