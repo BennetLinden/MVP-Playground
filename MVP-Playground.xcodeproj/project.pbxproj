@@ -17,11 +17,14 @@
 		55336B7F23DF1B2300E75DB1 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55336B7E23DF1B2300E75DB1 /* MarvelResponse.swift */; };
 		5571E97723DF211500F9732E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97623DF211500F9732E /* String+Extensions.swift */; };
 		5571E97B23DF264E00F9732E /* MarvelParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97A23DF264E00F9732E /* MarvelParamsBuilder.swift */; };
+		5571E97F23DF298700F9732E /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E97E23DF298700F9732E /* CharacterListViewController.swift */; };
+		5571E98123DF29CA00F9732E /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E98023DF29CA00F9732E /* CharacterListPresenter.swift */; };
+		5571E98323DF7CBB00F9732E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E98223DF7CBB00F9732E /* Endpoint.swift */; };
+		5571E98523DF7DB000F9732E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571E98423DF7DB000F9732E /* URL+Extensions.swift */; };
 		55A3D6DE23DAFB4000793F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3D6DD23DAFB4000793F90 /* AppDelegate.swift */; };
 		55A3D6E023DAFB4000793F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3D6DF23DAFB4000793F90 /* SceneDelegate.swift */; };
 		55A3D6E723DAFB4300793F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A3D6E623DAFB4300793F90 /* Assets.xcassets */; };
 		55A3D6EA23DAFB4300793F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A3D6E823DAFB4300793F90 /* LaunchScreen.storyboard */; };
-		55A3D6F223DAFE9C00793F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3D6F123DAFE9C00793F90 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,13 +35,16 @@
 		55336B7E23DF1B2300E75DB1 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
 		5571E97623DF211500F9732E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5571E97A23DF264E00F9732E /* MarvelParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelParamsBuilder.swift; sourceTree = "<group>"; };
+		5571E97E23DF298700F9732E /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		5571E98023DF29CA00F9732E /* CharacterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListPresenter.swift; sourceTree = "<group>"; };
+		5571E98223DF7CBB00F9732E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5571E98423DF7DB000F9732E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		55A3D6DA23DAFB4000793F90 /* MVP-Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVP-Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A3D6DD23DAFB4000793F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A3D6DF23DAFB4000793F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55A3D6E623DAFB4300793F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55A3D6E923DAFB4300793F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A3D6EB23DAFB4300793F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55A3D6F123DAFE9C00793F90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 		55336B6723DEDF7E00E75DB1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5571E98223DF7CBB00F9732E /* Endpoint.swift */,
 				55336B7623DEF72200E75DB1 /* Route.swift */,
 				55336B6823DEDF8800E75DB1 /* RemoteAPI.swift */,
 				55336B7823DEF81400E75DB1 /* ExternalAPI.swift */,
@@ -96,8 +103,26 @@
 			isa = PBXGroup;
 			children = (
 				5571E97623DF211500F9732E /* String+Extensions.swift */,
+				5571E98423DF7DB000F9732E /* URL+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5571E97C23DF296B00F9732E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5571E97D23DF297800F9732E /* CharacterList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5571E97D23DF297800F9732E /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				5571E98023DF29CA00F9732E /* CharacterListPresenter.swift */,
+				5571E97E23DF298700F9732E /* CharacterListViewController.swift */,
+			);
+			path = CharacterList;
 			sourceTree = "<group>";
 		};
 		55A3D6D123DAFB4000793F90 = {
@@ -119,14 +144,14 @@
 		55A3D6DC23DAFB4000793F90 /* MVP-Playground */ = {
 			isa = PBXGroup;
 			children = (
-				5571E97523DF210A00F9732E /* Extensions */,
 				55A3D6DD23DAFB4000793F90 /* AppDelegate.swift */,
 				55A3D6DF23DAFB4000793F90 /* SceneDelegate.swift */,
 				55A3D6E623DAFB4300793F90 /* Assets.xcassets */,
 				55A3D6E823DAFB4300793F90 /* LaunchScreen.storyboard */,
 				55A3D6EB23DAFB4300793F90 /* Info.plist */,
+				5571E97523DF210A00F9732E /* Extensions */,
 				55336B6623DEDF7400E75DB1 /* Data */,
-				55A3D6F123DAFE9C00793F90 /* ViewController.swift */,
+				5571E97C23DF296B00F9732E /* Presentation */,
 			);
 			path = "MVP-Playground";
 			sourceTree = "<group>";
@@ -211,15 +236,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5571E97F23DF298700F9732E /* CharacterListViewController.swift in Sources */,
 				55336B6923DEDF8800E75DB1 /* RemoteAPI.swift in Sources */,
 				5571E97B23DF264E00F9732E /* MarvelParamsBuilder.swift in Sources */,
-				55A3D6F223DAFE9C00793F90 /* ViewController.swift in Sources */,
+				5571E98123DF29CA00F9732E /* CharacterListPresenter.swift in Sources */,
+				5571E98523DF7DB000F9732E /* URL+Extensions.swift in Sources */,
 				55336B7C23DF1AD400E75DB1 /* Character.swift in Sources */,
 				55A3D6DE23DAFB4000793F90 /* AppDelegate.swift in Sources */,
 				5571E97723DF211500F9732E /* String+Extensions.swift in Sources */,
 				55336B7923DEF81400E75DB1 /* ExternalAPI.swift in Sources */,
 				55336B7F23DF1B2300E75DB1 /* MarvelResponse.swift in Sources */,
 				55336B7723DEF72200E75DB1 /* Route.swift in Sources */,
+				5571E98323DF7CBB00F9732E /* Endpoint.swift in Sources */,
 				55A3D6E023DAFB4000793F90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,8 +35,7 @@ struct ExternalAPI: RemoteAPI {
                         }
                     case .failure(let error):
                         print(error)
-                        if let data = response.data {
-                            let json = try? JSONSerialization.jsonObject(with: data)
+                        if let data = response.data, let json = try? JSONSerialization.jsonObject(with: data) {
                             print(json)
                         }
                         seal.reject(error)

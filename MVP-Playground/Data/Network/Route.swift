@@ -38,35 +38,3 @@ extension Route: URLRequestConvertible {
         return try encoding.encode(request, with: parameters)
     }
 }
-
-
-struct Endpoint {
-    
-    let url: URL
-    
-    private init(base: URL, path: String) {
-        url = base.appendingPathComponent(path)
-    }
-    
-    static var locations: Endpoint {
-        Endpoint(base: .fsp, path: "locations")
-    }
-    
-    static func location(id: String) -> Endpoint {
-        Endpoint(base: .fsp, path: "locations/\(id)")
-    }
-    
-    static var characters: Endpoint {
-        Endpoint(base: .marvel, path: "v1/public/characters")
-    }
-    
-}
-
-extension URL {
-    
-    static let api = URL(string: "www.host.nl/api")!
-    
-    static let fsp = URL(string: "fsp")!
-    static let gwi = URL(string: "gwi")!
-    static let marvel = URL(string: "https://gateway.marvel.com")!
-}

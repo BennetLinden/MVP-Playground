@@ -10,7 +10,6 @@ import Foundation
 
 struct MarvelResponse<Result: Decodable> {
     let results: Result
-    
 }
 
 extension MarvelResponse: Decodable {
