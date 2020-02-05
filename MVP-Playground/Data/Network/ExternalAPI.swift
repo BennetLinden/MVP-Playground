@@ -28,6 +28,9 @@ struct ExternalAPI: RemoteAPI {
                 .responseData { response in
                     switch response.result {
                     case .success(let data):
+                        if let json = try? JSONSerialization.jsonObject(with: data) {
+                            print(json)
+                        }
                         do {
                             seal.fulfill(try self.decoder.decode(Type.self, from: data))
                         } catch let error {

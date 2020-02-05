@@ -12,6 +12,7 @@ struct Endpoint {
     
     private var base: URL
     private var path: String
+    private var queryItems: [URLQueryItem]?
     
     init(base: URL, path: String) {
         self.base = base
@@ -19,7 +20,7 @@ struct Endpoint {
     }
     
     var url: URL {
-        base.appendingPathComponent(path)
+        return base.appendingPathComponent(path)
     }
 }
 
