@@ -42,14 +42,12 @@ extension EpisodeDataRepository: EpisodeRepository {
     }
 }
 
-extension URL {
+private extension URL {
     
     var queryItemsDictionary: [String: Any]? {
         guard let queryItems = URLComponents(url: self, resolvingAgainstBaseURL: true)?.queryItems, !queryItems.isEmpty else {
             return nil
         }
-        return queryItems.reduce(into: [String: Any]()) {
-            $0[$1.name] = $1.value
-        }
+        return queryItems.reduce(into: [:]) { $0[$1.name] = $1.value }
     }
 }
