@@ -38,3 +38,15 @@ extension Event {
         case select = "character_list_select_cta"
     }
 }
+
+extension Event {
+
+    static func episodeList(_ episodeList: EpisodeList) -> Event {
+        episodeList.event
+    }
+    
+    enum EpisodeList: String, EventType {
+        case screen = "episode_list_screen"
+        case select = "episode_list_select_cta"
+    }
+}

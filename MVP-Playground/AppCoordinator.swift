@@ -19,13 +19,23 @@ class AppCoordinator {
         dependencyContainer: dependencyContainer
     )
     
+    private lazy var rickAndMortyNavigationController = UINavigationController()
+    private lazy var rickAndMortyCoordinator = RickAndMortyCoordinator(
+        navigationController: rickAndMortyNavigationController,
+        dependencyContainer: dependencyContainer
+    )
+    
     init(tabBarController: UITabBarController, dependencyContainer: DependencyContainer) {
         self.tabBarController = tabBarController
         self.dependencyContainer = dependencyContainer
     }
     
     func start() {
-        tabBarController.setViewControllers([marvelNavigationController], animated: false)
         marvelCoordinator.start()
+        rickAndMortyCoordinator.start()
+        tabBarController.setViewControllers([
+            marvelNavigationController,
+            rickAndMortyNavigationController
+        ], animated: false)
     }
 }

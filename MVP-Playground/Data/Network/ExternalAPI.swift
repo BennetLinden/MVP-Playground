@@ -12,10 +12,10 @@ import PromiseKit
 
 struct ExternalAPI: RemoteAPI {
     
-    private let sessionManager: Alamofire.SessionManager
+    private let sessionManager: SessionManager
     private let decoder: JSONDecoder
     
-    init(sessionManager: Alamofire.SessionManager, decoder: JSONDecoder = .defaultDecoder) {
+    init(sessionManager: SessionManager, decoder: JSONDecoder = .defaultDecoder) {
         self.sessionManager = sessionManager
         self.decoder = decoder
     }
@@ -42,27 +42,5 @@ struct ExternalAPI: RemoteAPI {
                     }
             }
         }
-    }
-}
-
-extension JSONDecoder {
-    
-    static var defaultDecoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
-}
-
-extension Alamofire.SessionManager {
-    
-    static var marvel: Alamofire.SessionManager {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-        let sessionManager = Alamofire.SessionManager(
-            configuration: configuration
-        )
-        return sessionManager
     }
 }

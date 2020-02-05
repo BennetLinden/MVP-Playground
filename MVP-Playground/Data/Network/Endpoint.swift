@@ -46,3 +46,27 @@ extension Endpoint {
         }
     }
 }
+
+// MARK: - Rick and Morty Endpoint
+
+extension Endpoint {
+    
+    static func rickAndMorty(_ rickAndMorty: RickAndMorty) -> Endpoint {
+        rickAndMorty.endpoint
+    }
+    
+    enum RickAndMorty {
+        
+        case episodes
+        case episode(id: String)
+        
+        var endpoint: Endpoint {
+            switch self {
+            case .episodes:
+                return Endpoint(base: .rickAndMorty, path: "api/episode")
+            case .episode(let id):
+                return Endpoint(base: .rickAndMorty, path: "api/episode/\(id)")
+            }
+        }
+    }
+}

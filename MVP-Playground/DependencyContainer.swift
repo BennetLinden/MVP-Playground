@@ -11,7 +11,9 @@ import Foundation
 class DependencyContainer {
     
     private lazy var marvelAPI = ExternalAPI(sessionManager: .marvel)
+    private lazy var rickAndMortyAPI = ExternalAPI(sessionManager: .default)
     
     lazy var characterRepository: CharacterRepository = CharacterDataRepository(remoteAPI: marvelAPI)
+    lazy var episodeRepository: EpisodeRepository = EpisodeDataRepository(remoteAPI: rickAndMortyAPI)
     
 }
