@@ -10,8 +10,8 @@ import Foundation
 
 struct Endpoint {
     
-    var base: URL
-    var path: String
+    private var base: URL
+    private var path: String
     
     init(base: URL, path: String) {
         self.base = base
@@ -23,17 +23,26 @@ struct Endpoint {
     }
 }
 
-enum Marvel {
-    static var characters: Endpoint {
-        Endpoint(base: .marvel, path: "v1/public/characters")
-    }
-}
+// MARK: - Marvel Endpoint
 
-
-enum Constants {
+extension Endpoint {
     
-    enum API {
+    static func marvel(_ marvel: Marvel) -> Endpoint {
+        marvel.endpoint
+    }
+    
+    enum Marvel {
         
-        static var home = "/home"
+        case characters
+        case character(id: String)
+        
+        var endpoint: Endpoint {
+            switch self {
+            case .characters:
+                return Endpoint(base: .marvel, path: "v1/public/characters")
+            case .character(let id):
+                return Endpoint(base: .marvel, path: "v1/public/characters/\(id)")
+            }
+        }
     }
 }

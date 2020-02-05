@@ -9,6 +9,5 @@
 import Foundation
 
 extension URL {
-    
     static let marvel = URL(string: "https://gateway.marvel.com")!
 }

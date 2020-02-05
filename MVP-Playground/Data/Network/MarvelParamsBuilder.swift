@@ -29,6 +29,11 @@ class MarvelParamsBuilder {
         return self
     }
     
+    func add(params: [String: Any]) -> MarvelParamsBuilder {
+        self.params = self.params.merging(params, uniquingKeysWith: { first, _ in first })
+        return self
+    }
+    
     func build() -> [String: Any] {
         marvelAuthentication.merging(params, uniquingKeysWith: { (first, _) in first })
     }

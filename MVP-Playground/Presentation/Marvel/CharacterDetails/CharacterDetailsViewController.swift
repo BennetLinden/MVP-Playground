@@ -1,18 +1,18 @@
 //
-//  CharacterListViewController.swift
+//  CharacterDetailsViewController.swift
 //  MVP-Playground
 //
-//  Created by Bennet van der Linden on 27/01/2020.
+//  Created by Bennet van der Linden on 03/02/2020.
 //  Copyright © 2020 Bennet. All rights reserved.
 //
 
 import UIKit
 
-final class CharacterListViewController: UITableViewController {
+final class CharacterDetailsViewController: UIViewController {
     
-    private let presenter: CharacterListPresenter
+    private let presenter: CharacterDetailsPresenter
     
-    init(presenter: CharacterListPresenter) {
+    init(presenter: CharacterDetailsPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,9 +24,7 @@ final class CharacterListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        view.backgroundColor = .blue
     }
 }
+
