@@ -48,6 +48,12 @@ final class CharacterListViewController: UITableViewController {
         Analytics.track(event: .characterList(.select))
         presenter.didSelectRowAt(indexPath: indexPath)
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (tableView.numberOfRows(inSection: indexPath.section) - 2) {
+            presenter.didScrollToBottom()
+        }
+    }
 }
 
 extension CharacterListViewController: CharacterListView {

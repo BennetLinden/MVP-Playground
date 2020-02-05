@@ -23,8 +23,17 @@ final class CharacterListPresenter {
     }
     
     func viewDidLoad() {
-        characterRepository.getCharacters().done { characters in
+        characterRepository.getCharacters(offset: 0).done { characters in
             self.characters = characters
+            self.view?.reload()
+        }.catch { error in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func didScrollToBottom() {
+        characterRepository.getCharacters(offset: characters.count).done { characters in
+            self.characters += characters
             self.view?.reload()
         }.catch { error in
             print(error.localizedDescription)

@@ -10,10 +10,10 @@ import Foundation
 import PromiseKit
 
 protocol CharacterRepository {
-    func getCharacters() -> Promise<[Character]>
+    func getCharacters(offset: Int) -> Promise<[Character]>
 }
 
-class CharacterDataRepository {
+final class CharacterDataRepository {
     
     private let remoteAPI: RemoteAPI
 
@@ -24,8 +24,10 @@ class CharacterDataRepository {
 
 extension CharacterDataRepository: CharacterRepository {
     
-    func getCharacters() -> Promise<[Character]> {
-        let params: [String: Any] = MarvelParamsBuilder().build()
+    func getCharacters(offset: Int) -> Promise<[Character]> {
+        let params: [String: Any] = MarvelParamsBuilder()
+            .set(params: ["offset": offset, "limit": 25])
+            .build()
         let request: Promise<MarvelResponse<[Character]>> = remoteAPI.request(Route(.get, .marvel(.characters), with: params))
         return request.map { $0.results }
     }
