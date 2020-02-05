@@ -48,5 +48,11 @@ final class CharacterListViewController: UITableViewController {
         Analytics.track(event: .characterList(.select))
         presenter.didSelectRowAt(indexPath: indexPath)
     }
+}
+
+extension CharacterListViewController: CharacterListView {
     
+    func reload() {
+        tableView.reloadData()
+    }
 }

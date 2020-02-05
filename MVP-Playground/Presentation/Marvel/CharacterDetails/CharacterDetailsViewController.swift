@@ -28,3 +28,7 @@ final class CharacterDetailsViewController: UIViewController {
     }
 }
 
+extension CharacterDetailsViewController: CharacterDetailsView {
+    
+}
+

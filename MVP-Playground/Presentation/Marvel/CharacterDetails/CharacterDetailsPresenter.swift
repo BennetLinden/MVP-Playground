@@ -13,7 +13,7 @@ final class CharacterDetailsPresenter {
     private let coordinator: MarvelCoordinator
     private let character: Character
     
-    weak var view: CharacterDetailsViewController?
+    weak var view: CharacterDetailsView?
     
     init(coordinator: MarvelCoordinator, character: Character) {
         self.coordinator = coordinator

@@ -15,7 +15,7 @@ final class CharacterListPresenter {
     private let externalAPI: ExternalAPI
     private var characters: [Character] = []
     
-    weak var view: CharacterListViewController?
+    weak var view: CharacterListView?
     
     init(coordinator: MarvelCoordinator, externalAPI: ExternalAPI) {
         self.coordinator = coordinator
@@ -29,7 +29,7 @@ final class CharacterListPresenter {
             response.results
         }.done { characters in
             self.characters = characters
-            self.view?.tableView.reloadData()
+            self.view?.reload()
         }.catch { error in
             print(error.localizedDescription)
         }
@@ -44,10 +44,6 @@ final class CharacterListPresenter {
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
-        
-        Analytics.track(event: .onboarding(.lostBike))
-        
-        
         let character = characters[indexPath.row]
         coordinator.showCharacterDetails(for: character)
     }
