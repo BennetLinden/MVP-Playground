@@ -21,7 +21,7 @@ class MarvelCoordinator {
     func start() {
         let presenter = CharacterListPresenter(
             coordinator: self,
-            externalAPI: dependencyContainer.marvelAPI
+            characterRepository: dependencyContainer.characterRepository
         )
         let viewController = CharacterListViewController(
             presenter: presenter

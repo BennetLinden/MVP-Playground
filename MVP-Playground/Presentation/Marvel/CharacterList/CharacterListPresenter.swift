@@ -12,22 +12,18 @@ import PromiseKit
 final class CharacterListPresenter {
     
     private let coordinator: MarvelCoordinator
-    private let externalAPI: ExternalAPI
+    private let characterRepository: CharacterRepository
     private var characters: [Character] = []
     
     weak var view: CharacterListView?
     
-    init(coordinator: MarvelCoordinator, externalAPI: ExternalAPI) {
+    init(coordinator: MarvelCoordinator, characterRepository: CharacterRepository) {
         self.coordinator = coordinator
-        self.externalAPI = externalAPI
+        self.characterRepository = characterRepository
     }
     
     func viewDidLoad() {
-        let params: [String: Any] = MarvelParamsBuilder().build()
-        let request: Promise<MarvelResponse<[Character]>> = externalAPI.request(Route(.get, .marvel(.characters), with: params))
-        request.map { response in
-            response.results
-        }.done { characters in
+        characterRepository.getCharacters().done { characters in
             self.characters = characters
             self.view?.reload()
         }.catch { error in

@@ -10,6 +10,8 @@ import Foundation
 
 class DependencyContainer {
     
-    lazy var marvelAPI = ExternalAPI(sessionManager: .marvel)
+    private lazy var marvelAPI = ExternalAPI(sessionManager: .marvel)
+    
+    lazy var characterRepository: CharacterRepository = CharacterDataRepository(remoteAPI: marvelAPI)
     
 }
