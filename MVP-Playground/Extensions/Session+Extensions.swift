@@ -14,9 +14,9 @@ extension Session {
     static var marvel: Session {
         let configuration = URLSessionConfiguration.default
         configuration.headers = .default
-        let sessionManager = Session(
+        let session = Session(
             configuration: configuration
         )
-        return sessionManager
+        return session
     }
 }

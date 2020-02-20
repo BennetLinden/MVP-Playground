@@ -12,17 +12,17 @@ import PromiseKit
 
 struct ExternalAPI: RemoteAPI {
     
-    private let sessionManager: Session
+    private let session: Session
     private let decoder: JSONDecoder
     
-    init(sessionManager: Session, decoder: JSONDecoder = .defaultDecoder) {
-        self.sessionManager = sessionManager
+    init(session: Session, decoder: JSONDecoder = .defaultDecoder) {
+        self.session = session
         self.decoder = decoder
     }
     
     func request<Type: Decodable>(_ route: Route) -> Promise<Type> {
         Promise { seal in
-            self.sessionManager
+            self.session
                 .request(route)
                 .validate()
                 .responseData { response in
