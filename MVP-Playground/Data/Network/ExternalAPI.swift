@@ -13,11 +13,9 @@ import PromiseKit
 struct ExternalAPI: RemoteAPI {
     
     private let session: Session
-    private let decoder: JSONDecoder
     
-    init(session: Session, decoder: JSONDecoder = .defaultDecoder) {
+    init(session: Session) {
         self.session = session
-        self.decoder = decoder
     }
     
     func request<Type: Decodable>(_ route: Route) -> Promise<Type> {
@@ -25,21 +23,14 @@ struct ExternalAPI: RemoteAPI {
             self.session
                 .request(route)
                 .validate()
-                .responseData { response in
+                .responseDecodable(of: Type.self) { response in
                     switch response.result {
                     case .success(let data):
-                        if let json = try? JSONSerialization.jsonObject(with: data) {
-                            print(json)
-                        }
-                        do {
-                            seal.fulfill(try self.decoder.decode(Type.self, from: data))
-                        } catch let error {
-                            seal.reject(error)
-                        }
+                        seal.fulfill(data)
                     case .failure(let error):
                         print(error)
-                        if let data = response.data, let json = try? JSONSerialization.jsonObject(with: data) {
-                            print(json)
+                        if let data = response.data {
+                            print(data)
                         }
                         seal.reject(error)
                     }
