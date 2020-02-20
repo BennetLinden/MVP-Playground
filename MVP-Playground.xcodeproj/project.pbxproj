@@ -561,7 +561,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.9.1;
+				minimumVersion = 5.0.0;
 			};
 		};
 		55336B7323DEE44000E75DB1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
