@@ -15,7 +15,7 @@ protocol CharacterRepository {
 
 final class CharacterDataRepository {
     
-    private let remoteAPI: RemoteAPI
+    let remoteAPI: RemoteAPI
 
     init(remoteAPI: RemoteAPI) {
         self.remoteAPI = remoteAPI
