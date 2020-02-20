@@ -1,5 +1,5 @@
 //
-//  SessionManager+Extensions.swift
+//  Session+Extensions.swift
 //  MVP-Playground
 //
 //  Created by Bennet van der Linden on 05/02/2020.
@@ -9,12 +9,12 @@
 import Alamofire
 import Foundation
 
-extension SessionManager {
+extension Session {
     
-    static var marvel: SessionManager {
+    static var marvel: Session {
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
-        let sessionManager = SessionManager(
+        configuration.headers = .default
+        let sessionManager = Session(
             configuration: configuration
         )
         return sessionManager

@@ -12,10 +12,10 @@ import PromiseKit
 
 struct ExternalAPI: RemoteAPI {
     
-    private let sessionManager: SessionManager
+    private let sessionManager: Session
     private let decoder: JSONDecoder
     
-    init(sessionManager: SessionManager, decoder: JSONDecoder = .defaultDecoder) {
+    init(sessionManager: Session, decoder: JSONDecoder = .defaultDecoder) {
         self.sessionManager = sessionManager
         self.decoder = decoder
     }
